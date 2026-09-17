@@ -1342,3 +1342,54 @@ main p, main li, main dd, .foot p, .foot li{
 .hero-inner p, .hero-inner li, .hero-inner dd, .hero-inner dt,
 .ab-caption, .geo-cap, figcaption, .about-vision{
   text-align:center;-webkit-hyphens:manual;hyphens:manual}
+
+
+/* ---------- CONTAINER GUTTER REPAIR ------------------------------
+   Both header rows are built as `wrap nav` and `wrap topbar-in`.
+   `.wrap` supplies the side gutter, but each of those two classes then
+   sets a `padding` *shorthand* for its own vertical rhythm, and both
+   land later in this file - so the shorthand reset the horizontal
+   padding to zero and the gutter was lost. The logo, the burger and the
+   contact strip therefore sat flush against the screen edges on every
+   viewport narrower than the 1200px container, which is every phone and
+   tablet. Restate the gutter alongside each vertical value so the
+   shorthand can no longer drop it. This also lines the logo up with the
+   section content below it, which it was 26px out from on the desktop. */
+.nav{padding:12px var(--gutter)}
+.topbar-in{padding:7px var(--gutter)}
+
+
+/* ---------- PHONE AND TABLET REFINEMENTS -------------------------
+   These sit at the end of the file on purpose: the justified-copy and
+   utility-strip rules above carry no media query, so an override has to
+   come after them in source order to win. */
+@media(max-width:820px){
+
+  /* Justified setting needs a wide measure to look right. At phone
+     widths the same rule opens rivers of white space between words,
+     because automatic hyphenation is deliberately off site-wide. Set
+     the copy flush left below 820px and the rivers close up. */
+  main p, main li, main dd, .foot p, .foot li{
+    text-align:left;text-justify:auto}
+
+  /* The utility strip is desktop chrome. On a phone its four items
+     wrapped onto four separate rows and pushed the logo and the
+     headline a quarter of a screen down. Keep the two that are useful
+     on a phone - tap to mail, tap to call - and drop the rest: the
+     address and the incubation line are both repeated in the footer,
+     and Training / 5eriMitra / Contact are all in the menu. */
+  .topbar-in{justify-content:flex-start;gap:0}
+  .topbar .tb-left{width:100%;gap:0 clamp(14px,4vw,30px)}
+  .topbar .tb-left span{display:none}
+  .topbar .tb-right{display:none}
+  /* 44px is the Apple and Android minimum for a reliable finger tap;
+     these two were 26px. */
+  .topbar a{min-height:44px}
+}
+
+@media(max-width:600px){
+  /* On the narrowest phones the address and the number no longer fit on
+     one row, so give each its own and keep both comfortably tappable. */
+  .topbar .tb-left{flex-direction:column;gap:0}
+  .topbar .tb-left a{min-height:40px}
+}

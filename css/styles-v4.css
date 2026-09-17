@@ -1359,6 +1359,17 @@ main p, main li, main dd, .foot p, .foot li{
 .topbar-in{padding:7px var(--gutter)}
 
 
+/* ---------- GSTIN --------------------------------------------------
+   A 15-character alphanumeric identifier gets read one character at a
+   time and copied onto invoices, so the number is set brighter than the
+   muted footer copy around it, with tabular figures and a little
+   letter-spacing so 0/O and 1/I stay apart. #fff on --n-950 is about
+   19:1, well clear of the 4.5:1 floor. */
+.foot-gst{color:var(--on-deep-mut)}
+.foot-gst span{color:#fff;font-variant-numeric:tabular-nums;
+  letter-spacing:.055em;font-variation-settings:'wght' 600;white-space:nowrap}
+
+
 /* ---------- PHONE AND TABLET REFINEMENTS -------------------------
    These sit at the end of the file on purpose: the justified-copy and
    utility-strip rules above carry no media query, so an override has to

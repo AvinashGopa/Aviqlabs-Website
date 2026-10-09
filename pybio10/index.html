@@ -64,6 +64,9 @@ header.site{position:sticky;top:0;z-index:20;background:rgba(10,20,36,.92);backd
 .brand span{display:none}
 @media(min-width:640px){.brand span{display:inline}}
 .nav .btn{min-height:40px;padding:8px 18px;font-size:.92rem}
+.hdr-r{display:flex;align-items:center;gap:18px}
+.home{color:var(--body);text-decoration:none;font-size:.92rem;font-variation-settings:'wght' 600;padding:10px 0}
+.home:hover{color:var(--fg)}
 
 /* hero */
 .hero{position:relative;padding:clamp(48px,8vw,96px) 0 clamp(48px,7vw,84px);background:
@@ -180,7 +183,7 @@ footer a{color:var(--fg);text-decoration:none}
 <header class="site">
   <div class="wrap nav">
     <a class="brand" href="../"><img src="../images/img01.png" width="204" height="180" alt="Avyagraha logo"><span>Avyagraha Research and Analytics LLP</span></a>
-    <a class="btn btn-reg" href="register/">Register now</a>
+    <div class="hdr-r"><a class="home" href="../">Home</a><a class="btn btn-reg" href="register/">Register now</a></div>
   </div>
 </header>
 

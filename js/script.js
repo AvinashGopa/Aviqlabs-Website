@@ -48,13 +48,19 @@ function submitEnquiry(e){
 
 /* ===== mobile menu ===== */
 const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+const scrim=document.getElementById('menuScrim');
+/* the drawer opens below the header; keep its top edge in step with the header height */
+function setNavH(){var h=document.querySelector('header.site');if(h)document.documentElement.style.setProperty('--nav-h',Math.round(h.getBoundingClientRect().bottom>0?h.getBoundingClientRect().bottom:h.offsetHeight)+'px');}
 function setMenu(open){
+  if(open)setNavH();
+  if(scrim){scrim.hidden=false;requestAnimationFrame(()=>scrim.classList.toggle('on',open));}
   menu.classList.toggle('open',open);
   burger.classList.toggle('is-open',open);
   burger.setAttribute('aria-expanded',open?'true':'false');
   document.body.classList.toggle('menu-lock',open);
 }
 burger.addEventListener('click',()=>setMenu(!menu.classList.contains('open')));
+if(scrim)scrim.addEventListener('click',()=>setMenu(false));
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
 document.addEventListener('keydown',e=>{
   if(!menu.classList.contains('open'))return;

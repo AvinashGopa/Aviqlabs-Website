@@ -105,7 +105,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0;font-size:.88rem;color:va
 <main><div class="wrap" id="app">
   <h1>Register for <span>PyBio-10</span></h1>
   <p class="lead">16 to 26 Nov 2026 (Sunday 22 Nov holiday) · 6:30 to 8:30 PM IST · Online, live. Fees include GST.</p>
-  <p id="notReady" class="closed" hidden>Online registration opens shortly. To reserve a seat now, WhatsApp <a href="https://wa.me/918310579116?text=I%20would%20like%20to%20register%20for%20PyBio-10">+91 83105 79116</a>.</p>
+  <p id="notReady" class="closed" hidden>Online registration opens shortly. To reserve a seat now, WhatsApp <a href="https://wa.me/918310579116?text=I%20would%20like%20to%20register%20for%20PyBio-10">+91 83105 79116</a> or <a href="https://wa.me/919030305677?text=I%20would%20like%20to%20register%20for%20PyBio-10">+91 90303 05677</a>.</p>
 
   <form id="reg" novalidate>
     <div class="card">
@@ -117,20 +117,12 @@ footer{border-top:1px solid var(--rule);padding:22px 0;font-size:.88rem;color:va
         <div class="f"><label for="designation">Designation</label>
           <select id="designation" name="designation" required>
             <option value="">Select…</option>
-            <option>UG student</option><option>PG student</option><option>PhD scholar / Research scholar</option>
-            <option>Faculty / Professor</option><option>Scientist / Research associate</option><option>Industry professional</option><option>Other</option>
+            <option value="Student">Student (₹1,499)</option>
+            <option value="Professional">Professional (₹1,999)</option>
           </select><span class="msg">Please choose your designation.</span></div>
         <div class="f"><label for="institution">Institution / Organisation</label><input id="institution" name="institution" type="text" autocomplete="organization" required><span class="msg">Please enter your institution or organisation.</span></div>
         <div class="f"><label for="department">Department / Discipline <span class="opt">(optional)</span></label><input id="department" name="department" type="text" placeholder="e.g. Biotechnology"></div>
         <div class="f"><label for="city">City and State</label><input id="city" name="city" type="text" autocomplete="address-level2" required><span class="msg">Please enter your city and state.</span></div>
-        <div class="full f"><label>Prior programming experience</label>
-          <div class="chips">
-            <label><input type="radio" name="experience" value="None" checked><span>None</span></label>
-            <label><input type="radio" name="experience" value="Beginner"><span>Beginner (some R / Python / Excel)</span></label>
-            <label><input type="radio" name="experience" value="Intermediate"><span>Intermediate</span></label>
-          </div></div>
-        <div class="full f"><label for="source">How did you hear about PyBio-10? <span class="opt">(optional)</span></label>
-          <select id="source" name="source"><option value="">Select…</option><option>WhatsApp</option><option>LinkedIn</option><option>Instagram / Facebook</option><option>aviqlabs.com</option><option>Friend / Colleague</option><option>Previous Avyagraha programme</option><option>Other</option></select></div>
       </div>
     </div>
 
@@ -153,8 +145,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0;font-size:.88rem;color:va
       </div>
 
       <div class="grid" style="margin-top:20px">
-        <div class="f"><label for="utr">UPI transaction ID / UTR</label><input id="utr" name="utr" type="text" inputmode="numeric" autocomplete="off" placeholder="12-digit number" required><span class="hint">Shown in your UPI app after payment</span><span class="msg">Please enter the transaction ID exactly as shown in your payment app.</span></div>
-        <div class="f"><label for="paydate">Payment date</label><input id="paydate" name="paydate" type="date" required><span class="msg">Please enter the payment date.</span></div>
+        <div class="full f"><label for="utr">UPI transaction ID / UTR</label><input id="utr" name="utr" type="text" inputmode="numeric" autocomplete="off" placeholder="12-digit number" required><span class="hint">Shown in your UPI app after payment</span><span class="msg">Please enter the transaction ID exactly as shown in your payment app.</span></div>
         <div class="full f"><label for="payer">Name of the payer <span class="opt">(only if someone else paid)</span></label><input id="payer" name="payer" type="text"></div>
         <div class="full f" id="fileField"><label>Payment screenshot</label>
           <div class="drop" id="drop">
@@ -182,7 +173,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0;font-size:.88rem;color:va
     <p>A confirmation has been sent to <b id="remail"></b>. Your seat is confirmed once we verify the payment; joining details follow by email and WhatsApp before 16 November.</p>
     <p><a href="../PyBio-10-Brochure.pdf" target="_blank" rel="noopener">Download the brochure</a> · <a href="../">Back to PyBio-10</a></p>
   </div>
-  <p style="font-size:.88rem;color:var(--muted);margin-top:22px">Need help? WhatsApp <a href="https://wa.me/918310579116">+91 83105 79116</a> or email <a href="mailto:avinashstat@aviqlabs.com">avinashstat@aviqlabs.com</a>.</p>
+  <p style="font-size:.88rem;color:var(--muted);margin-top:22px">Need help? Call or WhatsApp <a href="https://wa.me/918310579116">+91 83105 79116</a> or <a href="https://wa.me/919030305677">+91 90303 05677</a>, or email <a href="mailto:avinashstat@aviqlabs.com">avinashstat@aviqlabs.com</a>.</p>
 </div></main>
 <footer><div class="wrap">Avyagraha Research and Analytics LLP · Ramasagara, Ballari, Karnataka · GSTIN 29ACIFA6009M1Z2</div></footer>
 
@@ -202,25 +193,21 @@ var DRAFT_KEY = "pybio10-draft";
   if (!mobile) { document.documentElement.className += " desktop"; document.querySelector(".desktop-note").hidden = false; }
   if (!BACKEND_URL) { $("notReady").hidden = false; form.hidden = true; return; }
 
-  // default payment date: today (local)
-  var t = new Date(); t.setMinutes(t.getMinutes() - t.getTimezoneOffset());
-  $("paydate").value = t.toISOString().slice(0, 10);
-  $("paydate").max = $("paydate").value;
-
   /* ---- draft: keeps typed details if the browser reloads after the UPI app ---- */
-  var FIELDS = ["name","email","phone","designation","institution","department","city","source","utr","payer","paydate"];
+  var FIELDS = ["name","email","phone","designation","institution","department","city","utr","payer"];
   function radios(n){ return form.querySelectorAll('input[name="'+n+'"]'); }
   function radioVal(n){ var r = form.querySelector('input[name="'+n+'"]:checked'); return r ? r.value : ""; }
   function saveDraft(){
     var d = {}; FIELDS.forEach(function(f){ d[f] = $(f).value; });
-    d.experience = radioVal("experience"); d.category = radioVal("category");
+    d.category = radioVal("category");
     try { localStorage.setItem(DRAFT_KEY, JSON.stringify(d)); } catch(e){}
   }
   try {
     var d = JSON.parse(localStorage.getItem(DRAFT_KEY) || "null");
     if (d) {
       FIELDS.forEach(function(f){ if (d[f]) $(f).value = d[f]; });
-      ["experience","category"].forEach(function(n){ radios(n).forEach(function(r){ if (r.value === d[n]) r.checked = true; }); });
+      radios("category").forEach(function(r){ if (r.value === d.category) r.checked = true; });
+      if (!FEES[$("designation").value]) $("designation").value = "";
     }
   } catch(e){}
   form.addEventListener("input", saveDraft);
@@ -235,7 +222,18 @@ var DRAFT_KEY = "pybio10-draft";
     a.href = UPI_BASE + "&am=" + FEES[c] + ".00&cu=INR&tn=" + encodeURIComponent("PyBio-10 " + c);
     $("catField").classList.remove("bad");
   }
-  radios("category").forEach(function(r){ r.addEventListener("change", updatePay); });
+  radios("category").forEach(function(r){ r.addEventListener("change", function(){
+    $("designation").value = this.value; $("designation").closest(".f").classList.remove("bad"); updatePay();
+  }); });
+  // Designation (Student / Professional) sets the fee category in the payment step.
+  $("designation").addEventListener("change", function(){
+    var v = this.value;
+    radios("category").forEach(function(r){ r.checked = (r.value === v); });
+    updatePay(); saveDraft();
+  });
+  if (FEES[$("designation").value] && !radioVal("category")) {
+    radios("category").forEach(function(r){ r.checked = (r.value === $("designation").value); });
+  }
   updatePay();
 
   $("copyUpi").addEventListener("click", function(){
@@ -295,8 +293,7 @@ var DRAFT_KEY = "pybio10-draft";
     designation: function(v){ return !!v; },
     institution: function(v){ return v.length > 1; },
     city: function(v){ return v.length > 1; },
-    utr: function(v){ return /^[A-Za-z0-9]{10,25}$/.test(v.replace(/\s+/g, "")); },
-    paydate: function(v){ return !!v; }
+    utr: function(v){ return /^[A-Za-z0-9]{10,25}$/.test(v.replace(/\s+/g, "")); }
   };
   Object.keys(rules).forEach(function(k){
     $(k).addEventListener("blur", function(){ if (this.value) check(k); });
@@ -313,7 +310,7 @@ var DRAFT_KEY = "pybio10-draft";
     if (!$("agree").checked) { $("agreeField").classList.add("bad"); first = first || $("agree"); alertBox.textContent = "Please tick the declaration to continue."; alertBox.classList.add("show"); }
     if (first) { first.scrollIntoView({ behavior: "smooth", block: "center" }); if (first.focus) first.focus({ preventScroll: true }); return; }
 
-    var payload = { website: $("website").value, experience: radioVal("experience"), category: radioVal("category"), agree: true, file: fileData };
+    var payload = { website: $("website").value, category: radioVal("category"), agree: true, file: fileData };
     FIELDS.forEach(function(f){ payload[f] = $(f).value.trim(); });
 
     var btn = $("submitBtn"); btn.disabled = true; btn.classList.add("busy"); $("submitTxt").textContent = "Submitting…";
@@ -327,7 +324,7 @@ var DRAFT_KEY = "pybio10-draft";
       })
       .catch(function(err){
         alertBox.textContent = (err && err.message && err.message !== "Failed to fetch") ? err.message :
-          "Could not reach the registration server. Please check your connection and try again, or WhatsApp +91 83105 79116.";
+          "Could not reach the registration server. Please check your connection and try again, or WhatsApp +91 83105 79116 / +91 90303 05677.";
         alertBox.classList.add("show");
         btn.disabled = false; btn.classList.remove("busy"); $("submitTxt").textContent = "Submit registration";
       });

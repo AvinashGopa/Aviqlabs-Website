@@ -1404,3 +1404,8 @@ main p, main li, main dd, .foot p, .foot li{
   .topbar .tb-left{flex-direction:column;gap:0}
   .topbar .tb-left a{min-height:40px}
 }
+
+/* PyBio-10 announcement (Oct 2026) */
+.ev-badge-open{background:#C8EE55;color:#0E1922}
+.tb-new{color:#C8EE55 !important;font-variation-settings:'wdth' 100,'wght' 650}
+.menu .menu-new{color:#C8EE55}

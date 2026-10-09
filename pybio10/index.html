@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PyBio-10: Python for Life Sciences | Avyagraha Research and Analytics LLP</title>
+<meta name="description" content="PyBio-10: a 10-day live, hands-on online training in Python for life sciences. 16 to 26 November 2026, 6:30 to 8:30 PM IST. Students Rs. 1,499, professionals Rs. 1,999, inclusive of GST.">
+<link rel="canonical" href="https://aviqlabs.com/pybio10/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aviqlabs.com/pybio10/">
+<meta property="og:title" content="PyBio-10: Python for Life Sciences, 16 to 26 Nov 2026">
+<meta property="og:description" content="10-day live, hands-on Python training for life scientists. No prior coding needed. Registrations open.">
+<meta property="og:image" content="https://aviqlabs.com/images/pybio10-brochure.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A1424">
+<link rel="icon" href="../images/img01.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Course","name":"PyBio-10: Python for Life Sciences",
+"description":"10-day live, hands-on online training in Python for life sciences: NumPy, Pandas, plotting, biostatistics, Biopython, omics data and machine learning.",
+"provider":{"@type":"Organization","name":"Avyagraha Research and Analytics LLP","sameAs":"https://aviqlabs.com/"},
+"hasCourseInstance":{"@type":"CourseInstance","courseMode":"online","startDate":"2026-11-16","endDate":"2026-11-26",
+"offers":[{"@type":"Offer","name":"Students","price":"1499","priceCurrency":"INR"},{"@type":"Offer","name":"Professionals","price":"1999","priceCurrency":"INR"}]}}
+</script>
+<style>
+:root{
+  --bg:#0A1424;--raised:#0E1B2E;--band:#081120;--deep:#0C1830;
+  --fg:#F2F6F9;--body:#C3D2DD;--muted:#93A7B6;
+  --lift:#EEF2F6;--on-lift:#0E1922;--on-lift-body:#32424F;--on-lift-muted:#55636E;
+  --accent:#7FBCE6;--solid:#185888;--solid-hi:#2277B4;
+  --lime:#C8EE55;--cy:#5ECFCE;
+  --rule:rgba(232,239,244,.13);--rule-strong:rgba(232,239,244,.24);
+  --font:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+  --maxw:1160px;--gutter:clamp(16px,3vw,26px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--body);font-family:var(--font);font-size:1.0625rem;line-height:1.6;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+.hero-grid>*,.reg-grid>*,.sched>*,.people>*,.take>*{min-width:0}
+a{color:var(--accent)}
+h1,h2,h3{color:var(--fg);margin:0;font-variation-settings:'wdth' 108,'wght' 700;letter-spacing:-.02em;line-height:1.1}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+.kick{display:block;position:relative;padding-top:14px;margin-bottom:14px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-variation-settings:'wdth' 100,'wght' 650}
+.kick::before{content:"";position:absolute;left:0;top:0;width:42px;height:2px;background:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 24px;border:1.5px solid transparent;font:inherit;font-size:1rem;font-variation-settings:'wdth' 100,'wght' 650;text-decoration:none;cursor:pointer;transition:background .18s,border-color .18s,transform .16s}
+.btn:active{transform:scale(.98)}
+.btn svg{width:17px;height:17px;flex:none}
+.btn-reg{background:var(--lime);color:#0E1922;border-color:var(--lime)}
+.btn-reg:hover{background:#d8f77a;border-color:#d8f77a}
+.btn-line{border-color:var(--rule-strong);color:var(--fg);background:transparent}
+.btn-line:hover{border-color:var(--fg);background:var(--band)}
+.lift .btn-line{border-color:#B9C6D1;color:var(--on-lift)}
+.lift .btn-line:hover{border-color:var(--on-lift);background:#fff}
+
+/* header */
+header.site{position:sticky;top:0;z-index:20;background:rgba(10,20,36,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg);font-variation-settings:'wdth' 100,'wght' 650;font-size:.95rem}
+.brand img{height:42px;width:auto;background:#fff;padding:3px 5px}
+.brand span{display:none}
+@media(min-width:640px){.brand span{display:inline}}
+.nav .btn{min-height:40px;padding:8px 18px;font-size:.92rem}
+
+/* hero */
+.hero{position:relative;padding:clamp(48px,8vw,96px) 0 clamp(48px,7vw,84px);background:
+  radial-gradient(900px 420px at 85% 0%,rgba(30,143,151,.22),transparent 60%),
+  radial-gradient(700px 380px at 0% 100%,rgba(24,88,136,.28),transparent 60%),var(--deep);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(28px,5vw,64px);align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,238,85,.12);border:1px solid rgba(200,238,85,.45);color:var(--lime);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;font-variation-settings:'wdth' 100,'wght' 650}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(200,238,85,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(200,238,85,0)}100%{box-shadow:0 0 0 0 rgba(200,238,85,0)}}
+.hero h1{font-size:clamp(3rem,9vw,6rem);margin:18px 0 6px;font-variation-settings:'wdth' 112,'wght' 800;letter-spacing:-.035em;line-height:.95}
+.hero h1 span{color:var(--lime)}
+.hero .sub{font-size:clamp(1.3rem,2.6vw,1.75rem);color:var(--fg);font-variation-settings:'wdth' 104,'wght' 600}
+.hero .lead{max-width:56ch;margin:18px 0 0;font-size:1.12rem}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:30px 0 28px}
+.facts div{background:rgba(8,17,32,.75);padding:14px 16px}
+.facts dt{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);font-variation-settings:'wdth' 100,'wght' 650}
+.facts dd{margin:4px 0 0;color:var(--fg);font-variation-settings:'wdth' 100,'wght' 650;line-height:1.3}
+.facts small{display:block;color:var(--muted);font-size:.82rem;font-variation-settings:'wght' 400}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.flyer{border:1px solid var(--rule-strong);box-shadow:0 30px 80px rgba(0,0,0,.45);transform:rotate(1.5deg);background:#fff}
+.flyer-cap{margin-top:14px;text-align:center;font-size:.85rem;color:var(--muted)}
+.flyer-cap a{color:var(--accent)}
+
+/* sections */
+.sec{padding:clamp(56px,8vw,96px) 0}
+.sec-head{max-width:62ch;margin-bottom:clamp(28px,4vw,48px)}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.8rem)}
+.sec-head p{margin:16px 0 0;font-size:1.1rem}
+.lift{background:var(--lift);color:var(--on-lift-body)}
+.lift h2,.lift h3{color:var(--on-lift)}
+.lift .kick{color:#185888}.lift .kick::before{background:#185888}
+
+/* schedule */
+.sched{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(20px,4vw,48px)}
+.day{display:grid;grid-template-columns:62px 1fr auto;gap:14px;align-items:start;padding:16px 0;border-bottom:1px solid #D3DCE3}
+.day .d{font-family:var(--mono);font-weight:600;color:#1B6F6A;font-size:.95rem;padding-top:2px}
+.day b{display:block;color:var(--on-lift);font-variation-settings:'wdth' 100,'wght' 650;line-height:1.3}
+.day span{display:block;font-size:.93rem;color:var(--on-lift-muted);line-height:1.45}
+.day em{font-style:normal;font-size:.85rem;color:#185888;margin-top:4px;display:block}
+.day time{font-family:var(--mono);font-size:.8rem;color:var(--on-lift-muted);white-space:nowrap;padding-top:3px}
+.day.hol{grid-template-columns:62px 1fr auto;background:var(--on-lift);color:#fff;padding:12px 14px;border:0;margin:6px 0}
+.day.hol b{color:var(--lime);letter-spacing:.1em}
+.day.hol .d,.day.hol time{color:#9fb0bc}
+
+/* trainers */
+.people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,32px)}
+.person{background:var(--raised);border:1px solid var(--rule);padding:22px;display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:center}
+.person img{width:96px;height:116px !important;object-fit:cover;border:2px solid var(--lime)}
+.person .role{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);font-variation-settings:'wdth' 100,'wght' 650}
+.person h3{font-size:1.2rem;margin:4px 0 6px}
+.person p{margin:0;font-size:.9rem;color:var(--muted);line-height:1.45}
+
+/* outcomes */
+.take{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:#D3DCE3;border:1px solid #D3DCE3}
+.tk{background:#fff;padding:22px}
+.tk .ic{font-family:var(--mono);font-weight:600;font-size:.85rem;color:var(--lime);background:var(--on-lift);display:inline-block;padding:4px 9px;margin-bottom:12px}
+.tk b{display:block;color:var(--on-lift);font-variation-settings:'wdth' 100,'wght' 650}
+.tk span{font-size:.93rem;color:var(--on-lift-muted)}
+
+/* fees + register */
+.reg-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,48px);align-items:start}
+.fee{display:flex;justify-content:space-between;align-items:center;gap:16px;border:1px solid var(--rule-strong);background:var(--raised);padding:20px 22px;margin-bottom:14px}
+.fee b{display:block;color:var(--fg);font-size:1.15rem;font-variation-settings:'wdth' 100,'wght' 650}
+.fee small{color:var(--muted);font-size:.88rem}
+.fee .amt{font-size:clamp(1.8rem,4vw,2.4rem);color:var(--lime);font-variation-settings:'wdth' 110,'wght' 800;white-space:nowrap}
+.note{font-size:.9rem;color:var(--muted)}
+ol.steps{list-style:none;counter-reset:s;margin:0;padding:0}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 18px 48px;color:var(--body)}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:50%;background:var(--lime);color:#0E1922;display:flex;align-items:center;justify-content:center;font-variation-settings:'wdth' 100,'wght' 750}
+ol.steps b{color:var(--fg)}
+.reg-box{border:1px solid rgba(200,238,85,.45);background:linear-gradient(160deg,rgba(200,238,85,.08),transparent 60%),var(--raised);padding:clamp(22px,3vw,32px)}
+.reg-box h3{font-size:1.5rem;margin-bottom:18px}
+.reg-box .btn{width:100%;margin-top:6px}
+
+/* faq */
+.faq details{border-bottom:1px solid #D3DCE3;padding:16px 0}
+.faq summary{cursor:pointer;color:var(--on-lift);font-variation-settings:'wdth' 100,'wght' 650;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::after{content:"+";font-size:1.4rem;line-height:1;color:#185888}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin:10px 0 0}
+
+/* footer */
+footer{background:var(--band);border-top:1px solid var(--rule);padding:36px 0;font-size:.92rem;color:var(--muted)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+footer a{color:var(--fg);text-decoration:none}
+
+/* sticky mobile register bar */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(8,17,32,.96);border-top:1px solid var(--rule)}
+.mbar .btn{width:100%}
+
+@media(max-width:900px){
+  .hero-grid,.reg-grid{grid-template-columns:1fr}
+  .flyer{max-width:340px;margin:0 auto;transform:none}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sched{grid-template-columns:1fr}
+  .people{grid-template-columns:1fr}
+  .take{grid-template-columns:1fr 1fr}
+  .mbar{display:block}
+  body{padding-bottom:76px}
+}
+@media(max-width:520px){
+  .take{grid-template-columns:1fr}
+  .day{grid-template-columns:48px 1fr}
+  .day time{grid-column:2;padding-top:0}
+  .person{grid-template-columns:80px 1fr}
+  .person img{width:80px;height:96px !important}
+  .nav .btn{display:none}
+}
+@media(prefers-reduced-motion:reduce){.badge i{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="../"><img src="../images/img01.png" width="204" height="180" alt="Avyagraha logo"><span>Avyagraha Research and Analytics LLP</span></a>
+    <a class="btn btn-reg" href="register/">Register now</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge"><i></i>Registrations open</span>
+      <h1>PyBio-<span>10</span></h1>
+      <div class="sub">Python for Life Sciences</div>
+      <p class="lead">A 10-day live, hands-on training programme. Learn to clean, analyse, visualise and model your own biological data in Python, taught by Dr. Avinash Gopa and team. No prior programming experience needed.</p>
+      <dl class="facts">
+        <div><dt>Dates</dt><dd>16 – 26 Nov 2026<small>Sunday 22 Nov holiday</small></dd></div>
+        <div><dt>Timing</dt><dd>6:30 – 8:30 PM<small>IST, every session</small></dd></div>
+        <div><dt>Mode</dt><dd>Online, live<small>Hands-on in Colab</small></dd></div>
+        <div><dt>Fee</dt><dd>₹1,499 / ₹1,999<small>Students / Professionals, incl. GST</small></dd></div>
+      </dl>
+      <div class="cta">
+        <a class="btn btn-reg" href="register/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Register now</a>
+        <a class="btn btn-line" href="PyBio-10-Brochure.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download brochure</a>
+      </div>
+    </div>
+    <div>
+      <a href="PyBio-10-Flyer.pdf" target="_blank" rel="noopener"><img class="flyer" src="flyer.jpg" width="1000" height="1414" alt="PyBio-10 flyer: Python for Life Sciences, 16 to 26 November 2026"></a>
+      <div class="flyer-cap"><a href="PyBio-10-Flyer.pdf" target="_blank" rel="noopener">Open the flyer (PDF)</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec lift" id="schedule">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kick">Programme schedule</span>
+      <h2>10 days. 10 skills.</h2>
+      <p>Every session runs 6:30 to 8:30 PM IST. You write and run the code yourself, on biological datasets.</p>
+    </div>
+    <div class="sched">
+      <div>
+        <div class="day"><div class="d">D01</div><div><b>Inauguration · Python foundations</b><span>Jupyter, Google Colab, core syntax</span><em>Dr. Avinash Gopa &amp; Mr. Chandan G Y</em></div><time>Mon 16 Nov</time></div>
+        <div class="day"><div class="d">D02</div><div><b>Thinking in code</b><span>Data types, loops, conditions, functions</span><em>Mr. Chandan G Y</em></div><time>Tue 17 Nov</time></div>
+        <div class="day"><div class="d">D03</div><div><b>NumPy for science</b><span>Arrays and fast numerical computing</span><em>Mr. Rajesh A</em></div><time>Wed 18 Nov</time></div>
+        <div class="day"><div class="d">D04</div><div><b>Pandas for lab data</b><span>Import, clean, merge and reshape datasets</span><em>Mr. Chandan G Y</em></div><time>Thu 19 Nov</time></div>
+        <div class="day"><div class="d">D05</div><div><b>Publication-ready plots</b><span>Matplotlib and Seaborn</span><em>Mr. Rajesh A</em></div><time>Fri 20 Nov</time></div>
+        <div class="day"><div class="d">D06</div><div><b>Biostatistics in Python</b><span>t-tests, ANOVA, regression with SciPy</span><em>Dr. Avinash Gopa</em></div><time>Sat 21 Nov</time></div>
+      </div>
+      <div>
+        <div class="day hol"><div class="d">—</div><div><b>HOLIDAY</b></div><time>Sun 22 Nov</time></div>
+        <div class="day"><div class="d">D07</div><div><b>Biopython essentials</b><span>Sequences, FASTA, GenBank, BLAST</span><em>Mr. Rajesh A</em></div><time>Mon 23 Nov</time></div>
+        <div class="day"><div class="d">D08</div><div><b>Omics data handling</b><span>Gene expression and NGS file formats</span><em>Dr. Avinash Gopa</em></div><time>Tue 24 Nov</time></div>
+        <div class="day"><div class="d">D09</div><div><b>Machine learning for biology</b><span>Classification and clustering with scikit-learn</span><em>Mr. Chandan G Y</em></div><time>Wed 25 Nov</time></div>
+        <div class="day"><div class="d">D10</div><div><b>Capstone and certification</b><span>Solve a real research problem end to end</span><em>Dr. Avinash Gopa</em></div><time>Thu 26 Nov</time></div>
+      </div>
+    </div>
+    <p style="margin-top:28px"><a class="btn btn-line" href="PyBio-10-Brochure.pdf" target="_blank" rel="noopener">Full day-by-day curriculum (brochure PDF)</a></p>
+  </div>
+</section>
+
+<section class="sec" id="trainers">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kick">Organizer and resource persons</span>
+      <h2>Learn from practitioners.</h2>
+    </div>
+    <div class="people">
+      <div class="person"><img src="avinash.jpg" width="360" height="420" loading="lazy" alt="Dr. Avinash Gopa"><div><div class="role">Organizer and speaker</div><h3>Dr. Avinash Gopa</h3><p>Founder &amp; CEO, Avyagraha Research &amp; Analytics LLP. Ex-ICMR Project Scientist-II (ICMR-NIOH, Ahmedabad). Ph.D. (Agricultural Statistics), IARI, New Delhi.</p></div></div>
+      <div class="person"><img src="rajesh.jpg" width="112" height="141" loading="lazy" alt="Mr. Rajesh A"><div><div class="role">Guest speaker</div><h3>Mr. Rajesh A</h3><p>CEO &amp; Tech Member, Avinya Techsphere, Bangalore.</p></div></div>
+      <div class="person"><img src="chandan.jpg" width="145" height="181" loading="lazy" alt="Mr. Chandan G Y"><div><div class="role">Guest speaker</div><h3>Mr. Chandan G Y</h3><p>Data Analyst, Bangalore.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec lift" id="outcomes">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kick">Who should join and what you get</span>
+      <h2>Built for life scientists, not programmers.</h2>
+      <p>UG, PG and PhD students; faculty, scientists and research associates; and pharma, agri-biotech and healthcare professionals across Biotechnology, Microbiology, Biochemistry, Genetics, Agriculture, Pharmacy and Medical Sciences.</p>
+    </div>
+    <div class="take">
+      <div class="tk"><div class="ic">.py</div><b>Code notebooks</b><span>Every day's notebook, ready to reuse on your own research data.</span></div>
+      <div class="tk"><div class="ic">3M</div><b>Recordings for 3 months</b><span>Revisit any session at your own pace.</span></div>
+      <div class="tk"><div class="ic">CP</div><b>Capstone project</b><span>An end-to-end analysis you can show on your CV.</span></div>
+      <div class="tk"><div class="ic">EC</div><b>E-certificate</b><span>Issued on completion of the programme.</span></div>
+      <div class="tk"><div class="ic">DNA</div><b>Real biological datasets</b><span>Sequence, expression, lab and field data.</span></div>
+      <div class="tk"><div class="ic">Q&amp;A</div><b>Live doubt clearing</b><span>Direct interaction with the trainers every session.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="register">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kick">Fees and registration</span>
+      <h2>Reserve your seat.</h2>
+      <p>Seats are limited. All fees are inclusive of GST.</p>
+    </div>
+    <div class="reg-grid">
+      <div>
+        <div class="fee"><div><b>Students</b><small>UG / PG / PhD students and research scholars</small></div><div class="amt">₹1,499</div></div>
+        <div class="fee"><div><b>Professionals</b><small>Faculty, scientists, industry and all others</small></div><div class="amt">₹1,999</div></div>
+        <p class="note">Payment is by UPI to Avyagraha Research and Analytics LLP (UPI ID 9480363456@okbizaxis).</p>
+      </div>
+      <div class="reg-box">
+        <h3>How to register</h3>
+        <ol class="steps">
+          <li>Open the <b>registration page</b> and fill in your details.</li>
+          <li>Choose your category and tap <b>Pay now</b>. Your UPI app (Google Pay, PhonePe, Paytm, BHIM) opens with the amount filled in. On a computer, scan the QR with your phone.</li>
+          <li>Enter the <b>UPI transaction ID</b>, upload the <b>payment screenshot</b> and submit. You get a registration ID and a confirmation email.</li>
+        </ol>
+        <a class="btn btn-reg" href="register/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Register and pay</a>
+              </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec lift faq" id="faq">
+  <div class="wrap" style="max-width:860px">
+    <div class="sec-head"><span class="kick">Questions</span><h2>Good to know</h2></div>
+    <details><summary>Do I need any programming background?</summary><p>No. The programme starts from the very basics and everything runs in the browser through Google Colab.</p></details>
+    <details><summary>What do I need to attend?</summary><p>A laptop or desktop with a stable internet connection, and a Google account for Colab notebooks.</p></details>
+    <details><summary>What if I miss a session?</summary><p>All sessions are recorded. Recordings stay available for 3 months after the programme.</p></details>
+    <details><summary>Which fee applies to me?</summary><p>The student fee (₹1,499) applies to UG, PG and PhD students and research scholars. Faculty, scientists, industry and all other participants pay the professional fee (₹1,999). Both include GST.</p></details>
+    <details><summary>Which UPI apps can I pay with?</summary><p>Any UPI app: Google Pay, PhonePe, Paytm, BHIM or your bank's app. On a phone, the Pay now button opens the app directly; on a computer, scan the QR code with your phone. You can also pay to UPI ID 9480363456@okbizaxis.</p></details>
+    <details><summary>When will I get the joining link?</summary><p>Once your payment is verified, joining details are shared by email and WhatsApp before the programme begins on 16 November 2026.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>Organised by <a href="../">Avyagraha Research and Analytics LLP</a> · Startup India (DPIIT) recognised · Incubated at AIC-UAS-B, GKVK, Bengaluru</span>
+    <span><a href="mailto:avinashstat@aviqlabs.com">avinashstat@aviqlabs.com</a> · <a href="tel:+918310579116">+91 83105 79116</a> · <a href="tel:+919480363456">+91 94803 63456</a></span>
+  </div>
+</footer>
+
+<div class="mbar"><a class="btn btn-reg" href="register/">Register now · from ₹1,499</a></div>
+
+</body>
+</html>

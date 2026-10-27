@@ -1,0 +1,6 @@
+# aviqlabs.com
+User-agent: *
+Allow: /
+Disallow: /pybio10/pay/
+
+Sitemap: https://aviqlabs.com/sitemap.xml
